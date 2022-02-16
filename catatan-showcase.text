@@ -1,0 +1,44 @@
+Selamat Pagi, Siang, Malam Pak Sandhika Galih dan temen-temen wpu.
+Perkenalkan nama saya bayu priyambada dari cikarang pusat [kawasan pabrik]
+
+Ijin showcase project front end ya dengan Website Klazbay
+
+Webiste ini dibuat dalam waktu 3 - 5hari karena kegabutan saya sambil menunggu hasil penerimaan hasil program bootcamp jcc bandung.
+
+Klazbay ini merupakan tempat dimana bisa belajar basic pemograman dengan gratis tidak ada status pembayaran.
+
+Dan rencananya akan di perbagus dan di kembangkan dalam waktu beberapa bulan kedepan sebagai platform aktif digunakan secara umum dengan sistem backend dan frontend.
+Karena solo player jadi lumayan lama pembuatan backendnya maka ditampilkan dulu versi frontendnya hehe.
+Dan fitur dashboard user [ commingsoon di project showcase berikutnya]
+
+Fitur Halaman:
+ Insyaallah sudah sangat responsive hehe.
+ [index.html]
+ [buku.html]
+    [single-buku.html]
+        [data-saya.html] << Author Klazbay
+ [kursus.html]
+    [single-kursus.html] << Author Kursus Klazbay
+ [blog.html] << Author dan Admin Klazbay
+ [404.html]
+ [masuk.html]
+ [register.html]
+
+ Teknologi:
+    Frontend:
+        [Html] [css]
+        [tailwindcss] [alpinejs]
+        [javascript [Top button]]
+    Backend:
+        [laravel] [livewire] [alpinejs] - commingsoon
+
+Link Repo:
+    [https://github.com/bayupb/Klazbay]
+
+Link Website:
+    [https://bayupb.github.io/Klazbay/]
+
+Terima kasih teman-teman, kritik dan saran yang pedas tolong disampaikan saja agar dapat lebih baik.
+Insyaallah jika sudah ready web fullnya, saya akan membuka bagi temen-temen yang ingin menambahkan portfolio / cv yang akan disediakan.
+
+#SalamNgoding#GarisKerasTitikKoma#AnakProgrammerNolep

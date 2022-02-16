@@ -39,19 +39,16 @@
             <li> <a href="buku.html" class="md:text-base text-xl font-semibold  hover:text-green-400">Buku</a></li>
             <li> <a href="kursus.html" class="md:text-base text-xl font-semibold  text-green-400">Kursus</a></li>
             <li> <a href="blog.html" class="md:text-base text-xl font-semibold  hover:text-green-400">Artikel</a></li>
-            <li x-data="{SubMenu : false}" x-on:mouseover="SubMenu = true" x-on:mouseleave="SubMenu = false" class="flex md:flex-row items-center flex-col"> 
-                <button @click="SubMenu = true" class="md:text-base md:relative text-xl font-semibold  hover:text-green-400">Kategori</button>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" :class="{'rotate-180': SubMenu}" class="ml-1 transform inline-block fill-current text-gray-500 w-6 h-6"><path fill-rule="evenodd" d="M15.3 10.3a1 1 0 011.4 1.4l-4 4a1 1 0 01-1.4 0l-4-4a1 1 0 011.4-1.4l3.3 3.29 3.3-3.3z"/></svg>
-
-                <ul class="md:px-5 py-1 md:absolute md:mt-52 md:bg-white md:shadow-sm md:rounded-md" x-show="SubMenu" x-on:click.away="SubMenu = false">
-                    <li class=" flex flex-col space-y-5 md:px-5 py-2">
-                    <a href="#" class="md:text-base text-xl font-semibold  hover:text-green-400">Kategori</a>
-                    <a href="#" class="md:text-base text-xl font-semibold  hover:text-green-400">Kategori</a>
-                    <a href="#" class="md:text-base text-xl font-semibold  hover:text-green-400">Kategori</a>
-                    <a href="#" class="md:text-base text-xl font-semibold  hover:text-green-400">Kategori</a>
-                    </li>
-                </ul>
-            </li>
+            <div class="relative" x-data="{OpenSubmenu: false}" x-on:mouseover="OpenSubmenu = true" x-on:mouseleave="OpenSubmenu = false">
+                <li> <button  @click="OpenSubmenu = true" class="md:text-base text-xl font-semibold  hover:text-green-400">Kategori</button></li>
+                <div class="md:bg-white px-10 py-4 space-y-5 md:shadow-sm md:rounded-md md:absolute block" x-show="OpenSubmenu">
+                    <li> <a href="#" class="text-base font-medium  hover:text-green-400">Laravel</a></li>
+                    <li> <a href="#" class="text-base font-medium  hover:text-green-400">Wordpress</a></li>
+                    <li> <a href="#" class="text-base font-medium  hover:text-green-400">Adonis</a></li>
+                    <li> <a href="#" class="text-base font-medium  hover:text-green-400">React</a></li>
+                    <li> <a href="#" class="text-base font-medium  hover:text-green-400">Tailwindcss</a></li>   
+                </div>
+            </div>
 
             <div class=" mt-4 space-x-4 md:hidden block">
                 <a href="register.html" class="border border-green-300  px-4 py-1 text-green-300 text-base rounded-md">Registrasi</a>
