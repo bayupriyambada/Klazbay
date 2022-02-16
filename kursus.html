@@ -41,7 +41,7 @@
             <li> <a href="blog.html" class="md:text-base text-xl font-semibold  hover:text-green-400">Artikel</a></li>
             <div class="relative" x-data="{OpenSubmenu: false}" x-on:mouseover="OpenSubmenu = true" x-on:mouseleave="OpenSubmenu = false">
                 <li> <button  @click="OpenSubmenu = true" class="md:text-base text-xl font-semibold  hover:text-green-400">Kategori</button></li>
-                <div class="md:bg-white px-10 py-4 space-y-5 md:shadow-sm md:rounded-md md:absolute block" x-show="OpenSubmenu">
+                <div class="md:bg-white px-8 space-y-3 md:shadow-sm md:rounded-md md:absolute block" x-show="OpenSubmenu">
                     <li> <a href="#" class="text-base font-medium  hover:text-green-400">Laravel</a></li>
                     <li> <a href="#" class="text-base font-medium  hover:text-green-400">Wordpress</a></li>
                     <li> <a href="#" class="text-base font-medium  hover:text-green-400">Adonis</a></li>
@@ -217,6 +217,6 @@
         document.documentElement.scrollTop = 0;
     }
     </script>
-  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script src="dist/alpine.js"></script>
  
 </html>

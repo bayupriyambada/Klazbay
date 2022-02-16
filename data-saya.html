@@ -63,37 +63,25 @@
       </div>
     </header>
 
-    <section class="bg-green-100 h-auto ">
-        <div class="flex lg:max-w-6xl w-full md:px-0 px-5 container mx-auto py-20 items-center relative">
-            <div class=" w-full">
-                <div class="bg-white shadow-sm rounded-md p-10">
-                    <div class="flex justify-between items-center">
-                        <div class="flex space-x-4 items-center">
-                            <div class="bg-green-400 rounded-full shadow-md">
-                                <img src="img/profile.png" alt="Bayu Priyambada" class="h-32 w-32">
-                            </div>
-                            <div class=" flex-col">
-                                <h4 class="text-2xl font-bold tracking-widest">Bayu Priyambada</h4>
-                                <p class="mt-2 text-base font-medium text-center tracking-widest">
-                                    Back-end Developer, Front-end Developer , CEO & Founder di Klazbay
-                                </p>
-                            </div>
-                        </div>
-                        <div class="flex flex-col items-center justify-center space-y-4 text-center">
-                            <a href="#" target="_blank" class="flex w-full capitalize bg-red-500 hover:bg-blue-200 rounded-md p-2 text-white text-base">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                                </svg>
-                                Download CV Saya
-                            </a>
-                            <a href="#" target="_blank" class=" flex w-full capitalize bg-blue-500 hover:bg-blue-200 rounded-md p-2 text-white text-base">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
-                                </svg>
-                                Trakter saya
-                            </a>
-                        </div>
-                    </div>
+    <section class="max-w-6xl mx-auto container md:px-0 px-5 w-full">
+        <div class="bg-white shadow-sm rounded-md p-4 ">
+            <div class="flex md:flex-row flex-col md:justify-between items-center">
+                <div class="bg-green-200 rounded-full shadow-sm">
+                    <img src="img/profile.png" class="h-28 w-28 object-fill">
+                </div>
+                <div class="flex flex-col md:mt-0 mt-4">
+                    <h4 class="text-2xl font-bold md:text-left text-center tracking-widest">Bayu Priyambada</h4>
+                    <p class="mt-2 text-base font-medium md:text-left text-center tracking-widest">
+                        Back-end Developer, Front-end Developer , CEO & Founder di Klazbay
+                    </p>
+                </div>
+                <div class="flex flex-col space-y-4 text-center md:mt-0 mt-4 md:w-auto w-full">
+                    <a href="#" class="px-5 py-2 rounded-md w-full text-base bg-blue-100">
+                        Download CV
+                    </a>
+                    <a href="#" class="px-5 py-2 rounded-md w-full text-base bg-red-100">
+                        Trakter
+                    </a>
                 </div>
             </div>
         </div>
@@ -205,6 +193,6 @@
         document.documentElement.scrollTop = 0;
     }
     </script>
-  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script src="dist/alpine.js"></script>
  
 </html>
