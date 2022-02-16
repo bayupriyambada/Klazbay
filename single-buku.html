@@ -1,0 +1,267 @@
+<!doctype html>
+<html class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="dist/main.css" rel="stylesheet">
+  <title>Klazbay | Buku Single Page</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-50 font-quicksand" x-data="{navbarOpen:false}">
+    <header class="bg-white shadow-md sticky -top-0 w-full z-10">
+      <div
+        class="flex justify-between items-center lg:max-w-6xl w-full mx-auto container py-3 md:px-0 px-5"
+      >
+        <div>
+          <a href="index.html" class="text-2xl font-bold">Klazbay</a>
+        </div>
+        <nav>
+          <button class="md:hidden" @click="navbarOpen = !navbarOpen">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 10h16M4 14h16M4 18h16"
+              />
+            </svg>
+          </button>
+          <ul
+            class="fixed left-0 right-0 min-h-screen bg-white space-y-4 p-4 transform transition duration-200 translate-x-full
+            md:relative md:flex md:justify-between md:min-h-0 md:space-y-0 md:space-x-6 md:p-0 md:translate-x-0"
+            :class="{'translate-x-full': !navbarOpen, 'translate-x-0': navbarOpen}">
+            <li> <a href="buku.html" class="md:text-base text-xl font-semibold  hover:text-green-400">Buku</a></li>
+            <li> <a href="kursus.html" class="md:text-base text-xl font-semibold  hover:text-green-400">Kursus</a></li>
+            <li> <a href="blog.html" class="md:text-base text-xl font-semibold  hover:text-green-400">Artikel</a></li>
+            <li> <a href="kategori.html" class="md:text-base text-xl font-semibold  hover:text-green-400">Kategori</a></li>
+
+            <div class=" mt-4 space-x-4 md:hidden block">
+                <a href="register.html" class="border border-green-300  px-4 py-1 text-green-300 text-base rounded-md">Registrasi</a>
+                <a href="masuk.html" class="bg-green-500 px-4 py-1 text-white text-base rounded-md">Masuk</a>
+            </div>
+          </ul>
+        </nav>
+        <div class="md:flex space-x-4 hidden">
+            <a href="register.html" class="border border-green-300  px-4 py-1 text-green-300 text-base rounded-md">Registrasi</a>
+            <a href="masuk.html" class="bg-green-500 px-4 py-1 text-white text-base rounded-md">Masuk</a>
+        </div>
+      </div>
+    </header>
+
+    <section class="bg-amber-100 h-auto ">
+        <div class="flex lg:max-w-6xl w-full md:px-0 px-5 container mx-auto py-20 items-center relative">
+            <div class="lg:w-3/5 md:w-3/6 w-full">
+                <div class="flex flex-col md:items-start md:justify-start items-center justify-center md:text-left text-center ">
+                    <span class="text-base font-semibold tracking-widest">Halaman Buku</span>
+                    <h4 class="lg:text-4xl md:text-3xl text-2xl font-bold mt-2 capitalize text-black">
+                        Ini adalah tampilan single page dari Buku</h4>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="lg:max-w-6xl w-full mx-auto container md:px-0 px-5" 
+        x-data="{BukuOpen :'deskripsi',
+        aktifBuku: 'bg-amber-500 text-white',
+        tidakAktifBuku: 'hover:bg-amber-100'}">
+        <section class="my-10">
+            <div class="flex md:flex-row flex-col justify-center mt-5">
+                <div class="md:w-3/5 md:mr-5 w-full">
+                    <div class="grid grid-cols-3 gap-4">
+                        <button @click="BukuOpen = 'deskripsi'">
+                            <div class="bg-white shadow-sm rounded-md p-2 text-center"
+                            :class="BukuOpen === 'deskripsi' ? aktifBuku : tidakAktifBuku">
+                                <h4 class="text-base font-semibold tracking-widest">Deskripsi</h4>
+                            </div>
+                        </button>
+                        <button @click="BukuOpen = 'materi'">
+                            <div class="bg-white shadow-sm rounded-md p-2 text-center"
+                            :class="BukuOpen === 'materi'? aktifBuku : tidakAktifBuku">
+                                <h4 class="text-base font-semibold tracking-widest">Materi</h4>
+                            </div>
+                        </button>
+                        <button @click="BukuOpen = 'penulis'">
+                            <div class="bg-white shadow-sm rounded-md p-2 text-center"
+                            :class="BukuOpen === 'penulis'? aktifBuku : tidakAktifBuku">
+                                <h4 class="text-base font-semibold tracking-widest">Penulis</h4>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="bg-white shadow-sm rounded-md p-4 mt-4">
+                        <div class="flex flex-col">
+                            <div x-show="BukuOpen === 'deskripsi'">
+                                <h5 class="text-xl font-semibold">Deskripsi Buku</h5>
+                                <hr class="p-0.5 bg-amber-100 mt-2">
+                                <p class="text-base font-medium text-justify whitespace-pre-line text-black">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis culpa, ex dolore non nam maiores error? Voluptatibus dolorum itaque aspernatur animi sint quisquam doloremque commodi voluptates qui dolore, harum atque aliquid deserunt deleniti doloribus debitis repellendus, illo voluptate non unde id facilis! Dignissimos, earum obcaecati. Eligendi tenetur est error nesciunt!ipsum dolor sit amet consectetur adipisicing elit. Optio officia perferendis quae dignissimos, impedit dicta nam tempore cupiditate nostrum commodi eos accusantium illum odit, autem, reprehenderit voluptatum voluptas necessitatibus? Possimus rerum, molestias dolor hic accusamus laudantium tempore molestiae totam voluptas quasi repellendus at optio ipsum mollitia consequuntur dolorem tempora a sapiente nemo ipsam atque quae iure tenetur quo? Molestias, cumque!
+                                </p>
+                            </div>
+                            <div x-show="BukuOpen === 'materi'">
+                                <h5 class="text-xl font-semibold">Materi Buku</h5>
+                                <hr class="p-0.5 bg-amber-500 mt-2">
+                                <div class="mt-2" 
+                                x-data="{selectedMateri : 1,
+                                    aktifMateri: 'bg-amber-900 text-white',
+                                    'tidakAktifMateri': 'hover:bg-blue-100'}">
+                                    <div class="grid grid-cols-1 gap-3">
+                                        <div class="flex flex-col">
+                                            <button type="button" @click="selectedMateri !== 1 ? selectedMateri = 1 : selectedMateri = null">
+                                            <div class="bg-white w-full shadow-sm rounded-md p-2 text-center flex justify-between items-center"
+                                            :class="selectedMateri === 1 ? aktifMateri : tidakAktifMateri">
+                                                <h4 class="text-base font-semibold tracking-widest">Tahapan 1</h4>
+                                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" :class="{'rotate-180': selectedMateri}" class="ml-1 transform inline-block fill-current text-gray-500 w-6 h-6"><path fill-rule="evenodd" d="M15.3 10.3a1 1 0 011.4 1.4l-4 4a1 1 0 01-1.4 0l-4-4a1 1 0 011.4-1.4l3.3 3.29 3.3-3.3z"/></svg>
+                                            </div>
+                                            <div class="mt-2">
+                                                <div class="bg-white text-left shadow-sm rounded-md p-3 text-sm font-normal tracking-widest transition-all duratition-200"
+                                                x-show="selectedMateri == 1"
+                                                    x-transition:enter="transition ease-out duration-300"
+                                                    x-transition:enter-start="opacity-0 transform -translate-y-2"
+                                                    x-transition:enter-end="opacity-100 transform translate-y-0"
+                                                    x-transition:leave="transition ease-in duration-200"
+                                                    x-transition:leave-end="opacity-0 transform -translate-y-3">
+                                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, quae.
+                                                </div>
+                                            </div>
+                                            </button>
+                                            
+                                        </div>
+                                        <div class="flex flex-col">
+                                            <button type="button" @click="selectedMateri !== 2 ? selectedMateri = 2 : selectedMateri = null">
+                                            <div class="bg-white w-full shadow-sm rounded-md p-2 text-center flex justify-between items-center"
+                                            :class="selectedMateri === 2 ? aktifMateri : tidakAktifMateri">
+                                                <h4 class="text-base font-semibold tracking-widest">Tahapan 2</h4>
+                                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" :class="{'rotate-180': selectedMateri}" class="ml-1 transform inline-block fill-current text-gray-500 w-6 h-6"><path fill-rule="evenodd" d="M15.3 10.3a1 1 0 011.4 1.4l-4 4a1 1 0 01-1.4 0l-4-4a1 1 0 011.4-1.4l3.3 3.29 3.3-3.3z"/></svg>
+                                            </div>
+                                            <div class="mt-2">
+                                                <div class="bg-white text-left shadow-sm rounded-md p-3 text-sm font-normal tracking-widest transition-all duratition-200"
+                                                x-show="selectedMateri == 2"
+                                                    x-transition:enter="transition ease-out duration-300"
+                                                    x-transition:enter-start="opacity-0 transform -translate-y-2"
+                                                    x-transition:enter-end="opacity-100 transform translate-y-0"
+                                                    x-transition:leave="transition ease-in duration-200"
+                                                    x-transition:leave-end="opacity-0 transform -translate-y-3">
+                                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, quae.
+                                                </div>
+                                            </div>
+                                            </button>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div x-show="BukuOpen === 'penulis'">
+                                <h5 class="text-xl font-semibold">Penulis Buku</h5>
+                                <hr class="p-0.5 bg-amber-500 mt-2">
+                                <div class="flex flex-col p-2 items-center justify-center">
+                                    <img src="img/profile.png" alt="Nama Profile" class="w-40 h-40">
+                                    <h4 class="mt-2 text-2xl font-bold">Bayu Priyambada</h4>
+                                    <p class="mt-2 text-base font-medium text-center tracking-widest">
+                                        Back-end Developer, Front-end Developer , CEO & Founder di Klazbay
+                                    </p>
+                                    <div class="flex space-x-2 mt-2">
+                                        <a href="#" target="_blank" class="capitalize bg-blue-500 hover:bg-blue-200 rounded-md p-2 text-white text-sm">
+                                            Traktir saya
+                                        </a>
+                                        <a href="data-saya.html" class="capitalize bg-yellow-500 hover:bg-yellow-200 rounded-md p-2 text-white text-sm">
+                                            Lihat Data Saya
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-2/5 w-full md:mt-0 mt-10">
+                    <div class="flex flex-col md:-mt-32 md:sticky md:top-24">
+                        <div class="flex">
+                            <a href="#" class="bg-amber-500 text-white p-2 rounded-md w-full text-center text-base font-medium tracking-widest">
+                                Download Buku
+                            </a>
+                        </div>
+                        <div class="bg-white shadow-sm rounded-md p-4 mt-2">
+                            <div class="flex flex-col">
+                                <img src="img/Klazbay-ebook.jpg" class="w-full h-96 rounded-md object-fill" alt="Membangun website menggunakan wordpress">
+                                <div class="grid grid-cols-1 gap-3 mt-4">
+                                    <div class="flex space-x-2 items-center border p-2 rounded-md">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
+                                        </svg>
+                                        <p class="text-sm font-bold">Gratis</p>
+                                    </div>
+                                    <div class="flex space-x-2 items-center border p-2 rounded-md">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0" />
+                                        </svg>
+                                        <p class="text-sm font-bold">Pemula</p>
+                                    </div>
+                                    <div class="flex space-x-2 items-center border p-2 rounded-md">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                                        </svg>
+                                        <p class="text-sm font-bold">Akses selamanya</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white shadow-sm rounded-md p-4 mt-2">
+                            <div class="flex flex-col">
+                                <h4 class="text-base font-semibold tracking-widest">Tinjauan Video</h4>
+                                <hr class="p-0.5 bg-amber-500 mt-2">
+                                <iframe width="100%" class="mt-4 rounded-md" height="400" src="https://www.youtube.com/watch?v=RxudtJUISQU" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                        
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div class="max-w-6xl container mx-auto">
+        <button onclick="topfunction()" id="atasbutton" class="hidden bg-green-300 rounded-md p-2 hover:bg-green-500 text-white fixed bottom-10 right-10 cursor-pointer">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7l4-4m0 0l4 4m-4-4v18" />
+            </svg>
+        </button>
+    </div>
+
+
+
+<footer class="bg-white py-1">
+    <div class="max-w-6xl mx-auto container">
+        <div class="flex justify-center py-3">
+            <p class="text-sm font-medium">&#64; 2022 <a href="index.html">Klazbay  </a> | Dibuat oleh bayu priyambada </p>
+        </div>
+    </div>
+</footer>
+</body>
+    <script>
+     var mytop = document.getElementById('atasbutton')
+
+     window.onscroll = function(){scrollfunction()}
+
+     function scrollfunction(){
+         if(document.body.scrollTop > 20 ||
+         document.documentElement.scrollTop > 20){
+             mytop.style.display = "block";
+         }else{
+             mytop.style.display = "none";
+         }
+     }
+
+     function topfunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+    </script>
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+ 
+</html>

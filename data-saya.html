@@ -1,0 +1,201 @@
+<!doctype html>
+<html class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="dist/main.css" rel="stylesheet">
+  <title>Klazbay | Bayu Priyambada</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-50 font-quicksand" x-data="{navbarOpen:false}">
+    <header class="bg-white shadow-md sticky -top-0 w-full z-10">
+      <div
+        class="flex justify-between items-center lg:max-w-6xl w-full mx-auto container py-3 md:px-0 px-5"
+      >
+        <div>
+          <a href="index.html" class="text-2xl font-bold">Klazbay</a>
+        </div>
+        <nav>
+          <button class="md:hidden" @click="navbarOpen = !navbarOpen">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 10h16M4 14h16M4 18h16"
+              />
+            </svg>
+          </button>
+          <ul
+            class="fixed left-0 right-0 min-h-screen bg-white space-y-4 p-4 transform transition duration-200 translate-x-full
+            md:relative md:flex md:justify-between md:min-h-0 md:space-y-0 md:space-x-6 md:p-0 md:translate-x-0"
+            :class="{'translate-x-full': !navbarOpen, 'translate-x-0': navbarOpen}">
+            <li> <a href="buku.html" class="md:text-base text-xl font-semibold  hover:text-green-400">Buku</a></li>
+            <li> <a href="kursus.html" class="md:text-base text-xl font-semibold  hover:text-green-400">Kursus</a></li>
+            <li> <a href="blog.html" class="md:text-base text-xl font-semibold  hover:text-green-400">Artikel</a></li>
+            <li> <a href="kategori.html" class="md:text-base text-xl font-semibold  hover:text-green-400">Kategori</a></li>
+
+            <div class=" mt-4 space-x-4 md:hidden block">
+                <a href="register.html" class="border border-green-300  px-4 py-1 text-green-300 text-base rounded-md">Registrasi</a>
+                <a href="masuk.html" class="bg-green-500 px-4 py-1 text-white text-base rounded-md">Masuk</a>
+            </div>
+          </ul>
+        </nav>
+        <div class="md:flex space-x-4 hidden">
+            <a href="register.html" class="border border-green-300  px-4 py-1 text-green-300 text-base rounded-md">Registrasi</a>
+            <a href="masuk.html" class="bg-green-500 px-4 py-1 text-white text-base rounded-md">Masuk</a>
+        </div>
+      </div>
+    </header>
+
+    <section class="bg-green-100 h-auto ">
+        <div class="flex lg:max-w-6xl w-full md:px-0 px-5 container mx-auto py-20 items-center relative">
+            <div class=" w-full">
+                <div class="bg-white shadow-sm rounded-md p-10">
+                    <div class="flex justify-between items-center">
+                        <div class="flex space-x-4 items-center">
+                            <div class="bg-green-400 rounded-full shadow-md">
+                                <img src="img/profile.png" alt="Bayu Priyambada" class="h-32 w-32">
+                            </div>
+                            <div class=" flex-col">
+                                <h4 class="text-2xl font-bold tracking-widest">Bayu Priyambada</h4>
+                                <p class="mt-2 text-base font-medium text-center tracking-widest">
+                                    Back-end Developer, Front-end Developer , CEO & Founder di Klazbay
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex flex-col items-center justify-center space-y-4 text-center">
+                            <a href="#" target="_blank" class="flex w-full capitalize bg-red-500 hover:bg-blue-200 rounded-md p-2 text-white text-base">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                </svg>
+                                Download CV Saya
+                            </a>
+                            <a href="#" target="_blank" class=" flex w-full capitalize bg-blue-500 hover:bg-blue-200 rounded-md p-2 text-white text-base">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
+                                </svg>
+                                Trakter saya
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="max-w-6xl mx-auto container md:px-0 px-5" 
+        x-data="{DataSaya :'buku',
+        aktifBuku: 'bg-amber-500 text-white',
+        tidakAktifBuku: 'hover:bg-amber-100'}">
+        <section class="my-10">
+            <div class="flex justify-center mt-5">
+                <div class="w-full mr-5">
+                    <div class="grid grid-cols-3 gap-4">
+                        <button @click="DataSaya = 'buku'">
+                            <div class="bg-white shadow-sm rounded-md p-2 text-center"
+                            :class="DataSaya === 'buku' ? aktifBuku : tidakAktifBuku">
+                                <h4 class="text-base font-semibold tracking-widest">Buku</h4>
+                            </div>
+                        </button>
+                        <button @click="DataSaya = 'kursus'">
+                            <div class="bg-white shadow-sm rounded-md p-2 text-center"
+                            :class="DataSaya === 'kursus'? aktifBuku : tidakAktifBuku">
+                                <h4 class="text-base font-semibold tracking-widest">Kursus</h4>
+                            </div>
+                        </button>
+                        <button @click="DataSaya = 'artikel'">
+                            <div class="bg-white shadow-sm rounded-md p-2 text-center"
+                            :class="DataSaya === 'artikel'? aktifBuku : tidakAktifBuku">
+                                <h4 class="text-base font-semibold tracking-widest">Artikel</h4>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="bg-white shadow-sm rounded-md p-4 mt-4">
+                        <div class="flex flex-col">
+                            <div x-show="DataSaya === 'buku'">
+                                <h5 class="text-xl font-semibold"> Buku Bayu Priyambada</h5>
+                                <hr class="p-0.5 bg-amber-100 mt-2">
+                                <div class="mt-4 grid lg:grid-cols-4 md:grid-cols-2 gap-4 grid-cols-1">
+                                    <div class="bg-white shadow-sm items-center justify-center rounded-md p-4 flex flex-col">
+                                        <img src="img/Klazbay-ebook.jpg" alt="Buku 1" class="h-72 w-full object-cover rounded-md">
+                                        <h4 class="text-base font-bold mt-2">Wordpress Template</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div x-show="DataSaya === 'kursus'">
+                                <h5 class="text-xl font-semibold"> Kursus</h5>
+                                <hr class="p-0.5 bg-amber-100 mt-2">
+                                <div class="mt-4 grid lg:grid-cols-4 md:grid-cols-2 gap-4 grid-cols-1">
+                                    <div class="bg-white shadow-sm items-center justify-center rounded-md p-4 flex flex-col">
+                                        <img src="img/Wordpress-kursus.jpg" alt="Buku 1" class="h-72 w-full object-cover rounded-md">
+                                        <h4 class="text-base font-bold mt-2">Kursus pembuatan website</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div x-show="DataSaya === 'artikel'">
+                                <h5 class="text-xl font-semibold"> Artikel</h5>
+                                <hr class="p-0.5 bg-amber-100 mt-2">
+                                <div class="flex mt-4">
+                                    <div class="bg-white shadow-sm rounded-md p-4 w-full flex flex-col items-center justify-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16" viewBox="0 0 24 24">
+                                            <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm3.5 8c.828 0 1.5.671 1.5 1.5s-.672 1.5-1.5 1.5-1.5-.671-1.5-1.5.672-1.5 1.5-1.5zm-7 0c.828 0 1.5.671 1.5 1.5s-.672 1.5-1.5 1.5-1.5-.671-1.5-1.5.672-1.5 1.5-1.5zm8.122 9.377c-1.286-.819-2.732-1.308-4.622-1.308s-3.336.489-4.622 1.308l-.471-.58c.948-1.161 2.761-2.797 5.093-2.797s4.145 1.636 5.093 2.797l-.471.58z"/></svg>
+                                        <p class="text-base font-medium tracking-widest mt-4">
+                                            Data artikel Bayu Priyambada tidak ada.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div class="max-w-6xl container mx-auto">
+        <button onclick="topfunction()" id="atasbutton" class="hidden bg-green-300 rounded-md p-2 hover:bg-green-500 text-white fixed bottom-10 right-10 cursor-pointer">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7l4-4m0 0l4 4m-4-4v18" />
+            </svg>
+        </button>
+    </div>
+
+
+
+<footer class="bg-white py-1">
+    <div class="max-w-6xl mx-auto container">
+        <div class="flex justify-center py-3">
+            <p class="text-sm font-medium">&#64; 2022 <a href="index.html">Klazbay  </a> | Dibuat oleh bayu priyambada </p>
+        </div>
+    </div>
+</footer>
+</body>
+    <script>
+     var mytop = document.getElementById('atasbutton')
+
+     window.onscroll = function(){scrollfunction()}
+
+     function scrollfunction(){
+         if(document.body.scrollTop > 20 ||
+         document.documentElement.scrollTop > 20){
+             mytop.style.display = "block";
+         }else{
+             mytop.style.display = "none";
+         }
+     }
+
+     function topfunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+    </script>
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+ 
+</html>

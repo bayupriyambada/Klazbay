@@ -1,0 +1,256 @@
+<!doctype html>
+<html class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="dist/main.css" rel="stylesheet">
+  <title>Klazbay | Artikel Pages</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-50 font-quicksand" x-data="{navbarOpen:false}">
+    <header class="bg-white shadow-md sticky -top-0 w-full z-10">
+      <div
+        class="flex justify-between items-center lg:max-w-6xl w-full mx-auto container py-3 md:px-0 px-5"
+      >
+        <div>
+          <a href="index.html" class="text-2xl font-bold">Klazbay</a>
+        </div>
+        <nav>
+          <button class="md:hidden" @click="navbarOpen = !navbarOpen">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 10h16M4 14h16M4 18h16"
+              />
+            </svg>
+          </button>
+          <ul
+            class="fixed left-0 right-0 min-h-screen bg-white space-y-4 p-4 transform transition duration-200 translate-x-full
+            md:relative md:flex md:justify-between md:min-h-0 md:space-y-0 md:space-x-6 md:p-0 md:translate-x-0"
+            :class="{'translate-x-full': !navbarOpen, 'translate-x-0': navbarOpen}">
+            <li> <a href="buku.html" class="md:text-base text-xl font-semibold  hover:text-green-400">Buku</a></li>
+            <li> <a href="kursus.html" class="md:text-base text-xl font-semibold  hover:text-green-400">Kursus</a></li>
+            <li> <a href="blog.html" class="md:text-base text-xl font-semibold  text-green-400">Artikel</a></li>
+            <li x-data="{SubMenu : false}" x-on:mouseover="SubMenu = true" x-on:mouseleave="SubMenu = false" class="flex md:flex-row items-center flex-col"> 
+                <button @click="SubMenu = true" class="md:text-base md:relative text-xl font-semibold  hover:text-green-400">Kategori</button>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" :class="{'rotate-180': SubMenu}" class="ml-1 transform inline-block fill-current text-gray-500 w-6 h-6"><path fill-rule="evenodd" d="M15.3 10.3a1 1 0 011.4 1.4l-4 4a1 1 0 01-1.4 0l-4-4a1 1 0 011.4-1.4l3.3 3.29 3.3-3.3z"/></svg>
+
+                <ul class="md:px-5 py-1 md:absolute md:mt-52 md:bg-white md:shadow-sm md:rounded-md" x-show="SubMenu" x-on:click.away="SubMenu = false">
+                    <li class=" flex flex-col space-y-5 md:px-5 py-2">
+                    <a href="#" class="md:text-base text-xl font-semibold  hover:text-green-400">Kategori</a>
+                    <a href="#" class="md:text-base text-xl font-semibold  hover:text-green-400">Kategori</a>
+                    <a href="#" class="md:text-base text-xl font-semibold  hover:text-green-400">Kategori</a>
+                    <a href="#" class="md:text-base text-xl font-semibold  hover:text-green-400">Kategori</a>
+                    </li>
+                </ul>
+            </li>
+
+            <div class=" mt-4 space-x-4 md:hidden block">
+                <a href="register.html" class="border border-green-300  px-4 py-1 text-green-300 text-base rounded-md">Registrasi</a>
+                <a href="masuk.html" class="bg-green-500 px-4 py-1 text-white text-base rounded-md">Masuk</a>
+            </div>
+          </ul>
+        </nav>
+        <div class="md:flex space-x-4 hidden">
+            <a href="register.html" class="border border-green-300  px-4 py-1 text-green-300 text-base rounded-md">Registrasi</a>
+            <a href="masuk.html" class="bg-green-500 px-4 py-1 text-white text-base rounded-md">Masuk</a>
+        </div>
+      </div>
+    </header>
+    <section class="bg-green-100">
+        <div class="flex flex-col items-center justify-center py-20">
+                <h3 class="text-3xl font-semibold capitalize">Artikel Klazbay</h3>
+                <p class="text-base mt-2 font-normal text-center">
+                    Cari artikel yang dapat membantu kamu menyelesaikan permasalahannya.
+                </p>
+            </div>
+    </section>
+
+    <main class="lg:max-w-6xl w-full mx-auto container lg:px-0 px-5">
+
+        <div class="flex justify-center items-center space-x-3 bg-white shadow-md p-4 rounded-md -mt-5">
+           <input type="text" placeholder="Cari Artikel Disini" class="form-input ring-1 outline-none rounded-md w-full">
+        </div>
+        <!-- Kelas -->
+        <section class="my-10">
+            <div class="flex flex-col justify-center mt-5">
+                <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 justify-center">
+                    <div class="bg-white shadow-md rounded-md">
+                        <div class="flex flex-col">
+                            <a href="single-blog.html">
+                                <img src="img/artikel-1.jpg" alt="Ebook 1" class="w-full h-52 rounded-t-md object-fill">
+
+                            </a>
+                            <div class="flex items-start px-5 py-2 -mt-5">
+                                <a href="#" class="bg-green-500 px-3 py-1 text-white font-normal text-sm rounded-md">
+                                    Tailwindcss
+                                </a>
+                            </div>
+                            <div class="flex px-5 py-2">
+                                <a href="single-blog.html" class="text-base font-bold capitalize text-black hover:underline">
+                                    Bagaimana cara menghubungkan database eloquent
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white shadow-md rounded-md">
+                        <div class="flex flex-col">
+                            <a href="single-blog.html">
+                                <img src="img/artikel-1.jpg" alt="Ebook 1" class="w-full h-52 rounded-t-md object-fill">
+
+                            </a>
+                            <div class="flex items-start px-5 py-2 -mt-5">
+                                <a href="#" class="bg-green-500 px-3 py-1 text-white font-normal text-sm rounded-md">
+                                    Tailwindcss
+                                </a>
+                            </div>
+                            <div class="flex px-5 py-2">
+                                <a href="single-blog.html" class="text-base font-bold capitalize text-black hover:underline">
+                                    Bagaimana cara menghubungkan database eloquent
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white shadow-md rounded-md">
+                        <div class="flex flex-col">
+                            <a href="single-blog.html">
+                                <img src="img/artikel-1.jpg" alt="Ebook 1" class="w-full h-52 rounded-t-md object-fill">
+
+                            </a>
+                            <div class="flex items-start px-5 py-2 -mt-5">
+                                <a href="#" class="bg-green-500 px-3 py-1 text-white font-normal text-sm rounded-md">
+                                    Tailwindcss
+                                </a>
+                            </div>
+                            <div class="flex px-5 py-2">
+                                <a href="single-blog.html" class="text-base font-bold capitalize text-black hover:underline">
+                                    Bagaimana cara menghubungkan database eloquent
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white shadow-md rounded-md">
+                        <div class="flex flex-col">
+                            <a href="single-blog.html">
+                                <img src="img/artikel-1.jpg" alt="Ebook 1" class="w-full h-52 rounded-t-md object-fill">
+
+                            </a>
+                            <div class="flex items-start px-5 py-2 -mt-5">
+                                <a href="#" class="bg-green-500 px-3 py-1 text-white font-normal text-sm rounded-md">
+                                    Tailwindcss
+                                </a>
+                            </div>
+                            <div class="flex px-5 py-2">
+                                <a href="single-blog.html" class="text-base font-bold capitalize text-black hover:underline">
+                                    Bagaimana cara menghubungkan database eloquent
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white shadow-md rounded-md">
+                        <div class="flex flex-col">
+                            <a href="single-blog.html">
+                                <img src="img/artikel-1.jpg" alt="Ebook 1" class="w-full h-52 rounded-t-md object-fill">
+
+                            </a>
+                            <div class="flex items-start px-5 py-2 -mt-5">
+                                <a href="#" class="bg-green-500 px-3 py-1 text-white font-normal text-sm rounded-md">
+                                    Tailwindcss
+                                </a>
+                            </div>
+                            <div class="flex px-5 py-2">
+                                <a href="single-blog.html" class="text-base font-bold capitalize text-black hover:underline">
+                                    Bagaimana cara menghubungkan database eloquent
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white shadow-md rounded-md">
+                        <div class="flex flex-col">
+                            <a href="single-blog.html">
+                                <img src="img/artikel-1.jpg" alt="Ebook 1" class="w-full h-52 rounded-t-md object-fill">
+
+                            </a>
+                            <div class="flex items-start px-5 py-2 -mt-5">
+                                <a href="#" class="bg-green-500 px-3 py-1 text-white font-normal text-sm rounded-md">
+                                    Tailwindcss
+                                </a>
+                            </div>
+                            <div class="flex px-5 py-2">
+                                <a href="single-blog.html" class="text-base font-bold capitalize text-black hover:underline">
+                                    Bagaimana cara menghubungkan database eloquent
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-center mt-10">
+                    <div class="grid grid-cols-6 gap-2">
+                        <div class="bg-green-500 shadow-sm p-4 rounded-md">
+                            <span class="text-white font-sm font-semibold">1</span>
+                        </div>
+                        <div class="bg-white shadow-sm p-4 rounded-md">
+                            <span class="text-black font-sm font-semibold">2</span>
+                        </div>
+                        <div class="bg-white shadow-sm p-4 rounded-md">
+                            <span class="text-black font-sm font-semibold">3</span>
+                        </div>
+                        <div class="bg-white shadow-sm p-4 rounded-md">
+                            <span class="text-black font-sm font-semibold">4</span>
+                        </div>
+                        <div class="bg-white shadow-sm p-4 rounded-md">
+                            <span class="text-black font-sm font-semibold">5</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div class="max-w-6xl container mx-auto">
+        <button onclick="topfunction()" id="atasbutton" class="hidden bg-green-300 rounded-md p-2 hover:bg-green-500 text-white fixed bottom-10 right-10 cursor-pointer">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7l4-4m0 0l4 4m-4-4v18" />
+            </svg>
+        </button>
+    </div>
+
+
+
+<footer class="bg-white py-1">
+    <div class="max-w-6xl mx-auto container">
+        <div class="flex justify-center py-3">
+            <p class="text-sm font-medium">&#64; 2022 <a href="index.html">Klazbay  </a> | Dibuat oleh bayu priyambada </p>
+        </div>
+    </div>
+</footer>
+</body>
+    <script>
+     var mytop = document.getElementById('atasbutton')
+
+     window.onscroll = function(){scrollfunction()}
+
+     function scrollfunction(){
+         if(document.body.scrollTop > 20 ||
+         document.documentElement.scrollTop > 20){
+             mytop.style.display = "block";
+         }else{
+             mytop.style.display = "none";
+         }
+     }
+
+     function topfunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+    </script>
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+ 
+</html>
